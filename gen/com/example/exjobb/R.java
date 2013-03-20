@@ -9,7 +9,10 @@ package com.example.exjobb;
 
 public final class R {
     public static final class array {
-        public static final int type_array=0x7f060000;
+        public static final int drugs_array=0x7f060000;
+        public static final int nbr_array=0x7f060003;
+        public static final int potency_array=0x7f060002;
+        public static final int type_array=0x7f060001;
     }
     public static final class attr {
     }
@@ -30,24 +33,26 @@ public final class R {
         public static final int tablett_ikon=0x7f020003;
     }
     public static final class id {
-        public static final int action_forgot_password=0x7f090011;
-        public static final int action_settings=0x7f090010;
-        public static final int email=0x7f090007;
-        public static final int header=0x7f090005;
-        public static final int imgIcon=0x7f09000d;
-        public static final int login=0x7f090009;
-        public static final int login_form=0x7f090004;
-        public static final int login_status=0x7f090002;
-        public static final int login_status_message=0x7f090003;
-        public static final int lstView=0x7f09000f;
-        public static final int password=0x7f090008;
-        public static final int personnbr=0x7f09000b;
-        public static final int sign_in_button=0x7f09000a;
+        public static final int action_forgot_password=0x7f090013;
+        public static final int action_settings=0x7f090012;
+        public static final int email=0x7f090009;
+        public static final int header=0x7f090007;
+        public static final int imgIcon=0x7f09000f;
+        public static final int login=0x7f09000b;
+        public static final int login_form=0x7f090006;
+        public static final int login_status=0x7f090004;
+        public static final int login_status_message=0x7f090005;
+        public static final int lstView=0x7f090011;
+        public static final int password=0x7f09000a;
+        public static final int personnbr=0x7f09000d;
+        public static final int sign_in_button=0x7f09000c;
+        public static final int spiNbr=0x7f090003;
+        public static final int spiPot=0x7f090002;
         public static final int spiType=0x7f090001;
         public static final int txtDrugs=0x7f090000;
-        public static final int txtFooter=0x7f09000c;
-        public static final int txtHeader=0x7f090006;
-        public static final int txtTitle=0x7f09000e;
+        public static final int txtFooter=0x7f09000e;
+        public static final int txtHeader=0x7f090008;
+        public static final int txtTitle=0x7f090010;
     }
     public static final class layout {
         public static final int drugs=0x7f030000;

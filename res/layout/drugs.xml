@@ -8,16 +8,46 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Läkemedelsnamn" />
+        android:text="Namn på läkemedel" />
     
     <AutoCompleteTextView 
         android:id="@+id/txtDrugs"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />
     
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Typ av läkemedel" 
+        android:paddingTop="20px"/>
+    
     <Spinner 
         android:id="@+id/spiType"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true" />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Styrka på läkemedel" 
+        android:paddingTop="20px"/>
+    
+    <Spinner 
+        android:id="@+id/spiPot"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true" />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Antal" 
+        android:paddingTop="20px"/>
+    
+    <Spinner 
+        android:id="@+id/spiNbr"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:drawSelectorOnTop="true" />
 
