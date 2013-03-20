@@ -22,6 +22,7 @@ public class DrugsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.drugs);
+		setTitle("Exjobb");
 		
 		drugs = getResources().getStringArray(R.array.drugs_array);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, drugs);
