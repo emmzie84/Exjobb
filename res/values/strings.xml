@@ -6,5 +6,9 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_login2">Login2Activity</string>
     <string name="title_activity_drugs">DrugsActivity</string>
+    <string-array name="type_array">
+        <item>Tablett</item>
+        <item>Kräm</item>
+    </string-array>
 
 </resources>
