@@ -2,6 +2,7 @@ package com.example.exjobb;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -26,7 +27,7 @@ public class DrugsActivity extends Activity {
 		drugs = getResources().getStringArray(R.array.drugs_array);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, drugs);
 		AutoCompleteTextView textView = (AutoCompleteTextView) findViewById(R.id.txtDrugs);		
-		textView.setThreshold(3);
+		textView.setThreshold(2);
 		textView.setAdapter(adapter);
 		
 		types = getResources().getStringArray(R.array.type_array);
@@ -47,7 +48,6 @@ public class DrugsActivity extends Activity {
 			public void onNothingSelected(AdapterView<?> arg0) {
 				// TODO Auto-generated method stub
 			}
-			
 		});
 		
 		potency = getResources().getStringArray(R.array.potency_array);
@@ -68,11 +68,11 @@ public class DrugsActivity extends Activity {
 			public void onNothingSelected(AdapterView<?> arg0) {
 				// TODO Auto-generated method stub
 			}
-			
 		});
 		
 		nbr = getResources().getStringArray(R.array.nbr_array);
 		Spinner sp3 = (Spinner) findViewById(R.id.spiNbr);
+		//ArrayAdapter<CharSequence> adapter4 = ArrayAdapter.createFromResource(this, R.array.nbr_array, R.layout.spinner_item_row);
 		ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, nbr);
 		sp3.setAdapter(adapter4);
 		sp3.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -89,8 +89,16 @@ public class DrugsActivity extends Activity {
 			public void onNothingSelected(AdapterView<?> arg0) {
 				// TODO Auto-generated method stub
 			}
-			
 		});
+	}
+	
+	public void onClickNext(View view) {
+		
+	}
+	
+	public void onClickBack(View view) {
+		startActivity(new Intent(this, MainActivity.class));
+		finish();
 	}
 
 	/*@Override
