@@ -70,11 +70,10 @@ public final class R {
         public static final int spinner_item_row=0x7f030007;
     }
     public static final class menu {
-        public static final int dbadapter=0x7f080000;
-        public static final int drugs=0x7f080001;
-        public static final int login=0x7f080002;
-        public static final int login2=0x7f080003;
-        public static final int main=0x7f080004;
+        public static final int drugs=0x7f080000;
+        public static final int login=0x7f080001;
+        public static final int login2=0x7f080002;
+        public static final int main=0x7f080003;
     }
     public static final class string {
         public static final int action_forgot_password=0x7f05000b;
