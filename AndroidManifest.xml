@@ -41,6 +41,10 @@
             android:name="com.example.exjobb.DrugsActivity"
             android:label="@string/title_activity_drugs" >
         </activity>
+        <activity
+            android:name="com.example.exjobb.DBAdapter"
+            android:label="@string/title_activity_dbadapter" >
+        </activity>
     </application>
 
 </manifest>

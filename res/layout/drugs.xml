@@ -29,7 +29,7 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="10dp"
+        android:paddingTop="10px"
         android:text="Namn på läkemedel" />
     
     <AutoCompleteTextView 
@@ -42,8 +42,8 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Typ av läkemedel" 
-        android:paddingTop="20px"/>
+        android:text="Typ" 
+        android:paddingTop="10px"/>
     
     <Spinner 
         android:id="@+id/spiType"
@@ -54,8 +54,8 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Styrka på läkemedel" 
-        android:paddingTop="20px"/>
+        android:text="Styrka" 
+        android:paddingTop="10px"/>
     
     <Spinner 
         android:id="@+id/spiPot"
@@ -66,8 +66,20 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:text="Förpackningsstorlek" 
+        android:paddingTop="10px"/>
+    
+    <Spinner 
+        android:id="@+id/spiVol"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true" />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:text="Antal" 
-        android:paddingTop="20px"/>
+        android:paddingTop="10px"/>
     
     <Spinner 
         android:id="@+id/spiNbr"

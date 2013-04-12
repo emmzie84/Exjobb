@@ -6,7 +6,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_login2">Login2Activity</string>
     <string name="title_activity_drugs">DrugsActivity</string>
-   	<string-array name="drugs_array">
+
+    <string-array name="drugs_array">
         <item>Alvedon</item>
         <item>Panodil</item>
         <item>Ibumetin</item>
@@ -20,12 +21,19 @@
         <item>100 mg</item>
         <item>100 g</item>
     </string-array>
-   	<string-array name="nbr_array">
+    <string-array name="nbr_array">
         <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
         <item>5</item>
     </string-array>
+    <string-array name="volumes_array">
+        <item>10 st</item>
+        <item>30 st</item>
+        <item>100 st</item>
+    </string-array>
+
+    <string name="title_activity_dbadapter">DBAdapter</string>
 
 </resources>

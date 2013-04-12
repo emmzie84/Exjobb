@@ -16,6 +16,7 @@ import android.widget.Toast;
 public class DrugsActivity extends Activity {
 	String[] drugs;
 	String[] types;
+	String[] volumes;
 	String[] potency;
 	String[] nbr;
 	
@@ -61,6 +62,26 @@ public class DrugsActivity extends Activity {
 					int arg2, long arg3) {
 				int index = arg0.getSelectedItemPosition();
 				Toast.makeText(getBaseContext(), "You've selected item: " + potency[index], Toast.LENGTH_SHORT).show();
+				
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+			}
+		});
+		
+		volumes = getResources().getStringArray(R.array.volumes_array);
+		Spinner sp4 = (Spinner) findViewById(R.id.spiVol);
+		ArrayAdapter<String> adapter5 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, volumes);
+		sp4.setAdapter(adapter5);
+		sp4.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+			@Override
+			public void onItemSelected(AdapterView<?> arg0, View arg1,
+					int arg2, long arg3) {
+				int index = arg0.getSelectedItemPosition();
+				Toast.makeText(getBaseContext(), "You've selected item: " + volumes[index], Toast.LENGTH_SHORT).show();
 				
 			}
 
