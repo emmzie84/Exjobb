@@ -27,4 +27,10 @@ public class DBAdapter {
 			+ PharmaciesDBAdapter.CLOSING_HOURS_SAT + " TEXT,"
 			+ PharmaciesDBAdapter.OPENING_HOURS_SUN + " TEXT,"
 			+ PharmaciesDBAdapter.CLOSING_HOURS_SUN + " TEXT" + ");";
+	
+	private static final String CREATE_TABLE_STOCK = "create table stock "
+			+ StockDBAdapter.DRUG_ID + "(INTEGER,"
+			+ StockDBAdapter.PHARMACY_ID + " INTEGER,"
+			+ StockDBAdapter.NUMBER + " INTEGER,"
+			+ StockDBAdapter.PRICE + " INTEGER" + ");";
 }
