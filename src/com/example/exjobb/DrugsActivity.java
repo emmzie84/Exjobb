@@ -1,8 +1,15 @@
 package com.example.exjobb;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -24,6 +31,31 @@ public class DrugsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.drugs);
+		
+		DrugsDBAdapter db = new DrugsDBAdapter(this);
+		try {
+			String destPath = "/data/data" + getPackageName() + "/databases";
+			File f = new File(destPath);
+			if(!f.exists()) {
+				Toast.makeText(getBaseContext(), "File doesn't exist!", Toast.LENGTH_LONG).show();
+				f.mkdirs();
+				f.createNewFile();
+				CopyDB(getBaseContext().getAssets().open("mydb"), new FileOutputStream(destPath + "/MyDB"));
+			}
+		} catch(FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		db.open();
+		Cursor c = db.getAllDrugs();
+		/**if (c.moveToFirst()) {
+			do {
+				DisplayDrug(c);
+			} while(c.moveToNext());
+		}**/
+		db.close();
 		
 		drugs = getResources().getStringArray(R.array.drugs_array);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, drugs);
@@ -112,6 +144,21 @@ public class DrugsActivity extends Activity {
 			}
 		});
 	}
+
+	public void DisplayDrug(Cursor c) {
+		Toast.makeText(this, "id: " + c.getString(0) + "\n" + "name: " + getString(1) + "\n" + "type: " + getString(2) + "\n" + "potency: " + getString(3) + "\n" + "size: " + getString(4), Toast.LENGTH_LONG).show();		
+	}
+
+	public void CopyDB(InputStream inputStream, FileOutputStream outputStream) throws IOException {
+			Toast.makeText(getBaseContext(), "File copied!", Toast.LENGTH_LONG).show();
+			byte[] buffer = new byte[1024];
+			int length;
+			while ((length = inputStream.read(buffer)) > 0) {
+				outputStream.write(buffer, 0, length);
+			}
+			inputStream.close();
+			outputStream.close();
+	}
 	
 	public void onClickNext(View view) {
 		
@@ -121,7 +168,7 @@ public class DrugsActivity extends Activity {
 		startActivity(new Intent(this, MainActivity.class));
 		finish();
 	}
-
+	
 	/*@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
