@@ -1,9 +1,16 @@
 package com.example.exjobb;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.Intent;
+import android.database.Cursor;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -19,6 +26,32 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		
+		/**DBAdapter db = new DBAdapter(this);
+		/**try {
+			String destPath = "/data/data" + getPackageName() + "/databases";
+			File f = new File(destPath);
+			if(!f.exists()) {
+				Toast.makeText(getBaseContext(), "File doesn't exist!", Toast.LENGTH_LONG).show();
+				f.mkdirs();
+				f.createNewFile();
+				//CopyDB(getBaseContext().getAssets().open("mydb"), new FileOutputStream(destPath + "/MyDB"));
+			}
+		} catch(FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}**/
+		
+		//db.open();
+		/**Cursor c = db.getAllDrugs();
+		if (c.moveToFirst()) {
+			do {
+				DisplayDrug(c);
+			} while(c.moveToNext());
+		}**/
+		//db.close();
+		
 		Choice choices[] = new Choice[] {
 				new Choice(R.drawable.tablett_ikon, "Hitta läkemedel"), 
 				new Choice(R.drawable.recept_ikon, "Mina recept"), 
@@ -50,6 +83,17 @@ public class MainActivity extends Activity {
 				}
 			}
 		});
+	}
+	
+	public void CopyDB(InputStream inputStream, FileOutputStream outputStream) throws IOException {
+		Toast.makeText(getBaseContext(), "File copied!", Toast.LENGTH_LONG).show();
+		byte[] buffer = new byte[1024];
+		int length;
+		while ((length = inputStream.read(buffer)) > 0) {
+			outputStream.write(buffer, 0, length);
+		}
+		inputStream.close();
+		outputStream.close();
 	}
 
 	/*@Override

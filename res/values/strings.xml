@@ -35,5 +35,6 @@
     </string-array>
 
     <string name="title_activity_dbadapter">DBAdapter</string>
+    <string name="title_activity_pharmacies">PharmaciesActivity</string>
 
 </resources>
