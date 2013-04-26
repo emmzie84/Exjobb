@@ -17,7 +17,7 @@ public class DrugsDBAdapter {
 	public static final String PREFERENTIAL_PRICE = "preferential_price";
 	public static final String PRESCRIPTION_ONLY = "prescription_only";
 	
-	private static final String DATABASE_TABLE = "Drugs";
+	private static final String DATABASE_TABLE = "drugs";
 	
 	private DatabaseHelper mDBHelper;
 	private SQLiteDatabase mDB;

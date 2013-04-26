@@ -17,7 +17,7 @@ public class DBAdapter {
 			+ DrugsDBAdapter.PREFERENTIAL_PRICE + " TEXT,"
 			+ DrugsDBAdapter.PRESCRIPTION_ONLY + " TEXT" + ");";
 	
-	private static final String CREATE_TABLE_PHARMACIES = "create table pharmacies (_id integer primary key autoincrement, "
+	/**private static final String CREATE_TABLE_PHARMACIES = "create table pharmacies (_id integer primary key autoincrement, "
 			+ PharmaciesDBAdapter.CHAIN_NAME + " TEXT,"
 			+ PharmaciesDBAdapter.PHARMACY_NAME + " TEXT,"
 			+ PharmaciesDBAdapter.ADDRESS + " TEXT,"
@@ -37,7 +37,7 @@ public class DBAdapter {
 			+ StockDBAdapter.DRUG_ID + "(INTEGER,"
 			+ StockDBAdapter.PHARMACY_ID + " INTEGER,"
 			+ StockDBAdapter.NUMBER + " INTEGER,"
-			+ StockDBAdapter.PRICE + " INTEGER" + ");";
+			+ StockDBAdapter.PRICE + " INTEGER" + ");";**/
 	
 	private final Context context;
 	private DatabaseHelper DBHelper;
@@ -56,8 +56,8 @@ public class DBAdapter {
 		@Override
 		public void onCreate(SQLiteDatabase db) {
 			db.execSQL(CREATE_TABLE_DRUGS);
-			db.execSQL(CREATE_TABLE_PHARMACIES);
-			db.execSQL(CREATE_TABLE_STOCK);
+			//db.execSQL(CREATE_TABLE_PHARMACIES);
+			//db.execSQL(CREATE_TABLE_STOCK);
 		}
 
 		@Override

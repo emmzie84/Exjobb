@@ -27,30 +27,30 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		
-		/**DBAdapter db = new DBAdapter(this);
-		/**try {
-			String destPath = "/data/data" + getPackageName() + "/databases";
+		DBAdapter db = new DBAdapter(this);
+		try {
+			String destPath = "/data/data/" + getPackageName() + "/databases";
 			File f = new File(destPath);
-			if(!f.exists()) {
-				Toast.makeText(getBaseContext(), "File doesn't exist!", Toast.LENGTH_LONG).show();
+			if (!f.exists()) {
+				Toast.makeText(getBaseContext(), "File doesn't exist in DBAdapter!", Toast.LENGTH_LONG).show();
 				f.mkdirs();
 				f.createNewFile();
-				//CopyDB(getBaseContext().getAssets().open("mydb"), new FileOutputStream(destPath + "/MyDB"));
+				CopyDB(getBaseContext().getAssets().open("mydb"), new FileOutputStream(destPath + "/MyDB2"));
 			}
-		} catch(FileNotFoundException e) {
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}**/
-		
-		//db.open();
-		/**Cursor c = db.getAllDrugs();
-		if (c.moveToFirst()) {
+		}
+		db.open();
+		Toast.makeText(getBaseContext(), "DBOpen!", Toast.LENGTH_LONG).show();
+		/**Cursor c = db.getAllContacts();
+		if (c.moveToFirst()){
 			do {
-				DisplayDrug(c);
-			} while(c.moveToNext());
+				DisplayContact(c);
+			} while (c.moveToNext());
 		}**/
-		//db.close();
+		db.close();
 		
 		Choice choices[] = new Choice[] {
 				new Choice(R.drawable.tablett_ikon, "Hitta läkemedel"), 
@@ -86,7 +86,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void CopyDB(InputStream inputStream, FileOutputStream outputStream) throws IOException {
-		Toast.makeText(getBaseContext(), "File copied!", Toast.LENGTH_LONG).show();
+		Toast.makeText(getBaseContext(), "File copied in DBAdapter!", Toast.LENGTH_LONG).show();
 		byte[] buffer = new byte[1024];
 		int length;
 		while ((length = inputStream.read(buffer)) > 0) {

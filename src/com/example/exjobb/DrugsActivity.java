@@ -32,15 +32,15 @@ public class DrugsActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.drugs);
 		
-		/**DrugsDBAdapter db = new DrugsDBAdapter(this);
+		DrugsDBAdapter db = new DrugsDBAdapter(this);
 		try {
 			String destPath = "/data/data" + getPackageName() + "/databases";
 			File f = new File(destPath);
 			if(!f.exists()) {
-				Toast.makeText(getBaseContext(), "File doesn't exist!", Toast.LENGTH_LONG).show();
+				Toast.makeText(getBaseContext(), "File doesn't exist in DrugsDBAdapter!", Toast.LENGTH_LONG).show();
 				f.mkdirs();
 				f.createNewFile();
-				CopyDB(getBaseContext().getAssets().open("mydb"), new FileOutputStream(destPath + "/MyDB"));
+				CopyDB(getBaseContext().getAssets().open("mydb"), new FileOutputStream(destPath + "/MyDB2"));
 			}
 		} catch(FileNotFoundException e) {
 			e.printStackTrace();
@@ -49,13 +49,15 @@ public class DrugsActivity extends Activity {
 		}
 		
 		db.open();
+		Toast.makeText(getBaseContext(), "DrugsDBOpen!!!", Toast.LENGTH_LONG).show();
 		Cursor c = db.getAllDrugs();
 		if (c.moveToFirst()) {
 			do {
+				Toast.makeText(getBaseContext(), "Show drug!!!", Toast.LENGTH_LONG).show();
 				DisplayDrug(c);
 			} while(c.moveToNext());
 		}
-		db.close();**/
+		db.close();
 		
 		drugs = getResources().getStringArray(R.array.drugs_array);
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, drugs);
@@ -145,12 +147,13 @@ public class DrugsActivity extends Activity {
 		});
 	}
 
-	/**private void DisplayDrug(Cursor c) {
+	private void DisplayDrug(Cursor c) {
+		//Toast.makeText(this, "Display drug!", Toast.LENGTH_LONG).show();
 		Toast.makeText(this, "id: " + c.getString(0) + "\n" + "name: " + c.getShort(1), Toast.LENGTH_LONG).show();		
-	}**/
+	}
 
-	/**public void CopyDB(InputStream inputStream, FileOutputStream outputStream) throws IOException {
-		Toast.makeText(getBaseContext(), "File copied!", Toast.LENGTH_LONG).show();
+	public void CopyDB(InputStream inputStream, FileOutputStream outputStream) throws IOException {
+		Toast.makeText(getBaseContext(), "File copied in DrugsDBAdapter!", Toast.LENGTH_LONG).show();
 		byte[] buffer = new byte[1024];
 		int length;
 		while ((length = inputStream.read(buffer)) > 0) {
@@ -158,7 +161,7 @@ public class DrugsActivity extends Activity {
 		}
 		inputStream.close();
 		outputStream.close();
-	}**/
+	}
 	
 	public void onClickNext(View view) {
 		startActivity(new Intent(this, PharmaciesActivity.class));
