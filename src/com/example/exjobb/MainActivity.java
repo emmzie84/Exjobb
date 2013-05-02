@@ -44,10 +44,10 @@ public class MainActivity extends Activity {
 		}
 		db.open();
 		Toast.makeText(getBaseContext(), "DBOpen!", Toast.LENGTH_LONG).show();
-		/**Cursor c = db.getAllContacts();
+		/**Cursor c = db.getDrugss();
 		if (c.moveToFirst()){
 			do {
-				DisplayContact(c);
+				DisplayDrug(c);
 			} while (c.moveToNext());
 		}**/
 		db.close();

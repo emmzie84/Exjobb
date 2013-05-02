@@ -49,13 +49,12 @@ public class DrugsActivity extends Activity {
 		}
 		
 		db.open();
-		Toast.makeText(getBaseContext(), "DrugsDBOpen!!!", Toast.LENGTH_LONG).show();
+		Toast.makeText(getBaseContext(), "DrugsDBOpen!", Toast.LENGTH_LONG).show();
 		Cursor c = db.getAllDrugs();
-		if (c.moveToFirst()) {
+		if (c.moveToFirst()){
 			do {
-				Toast.makeText(getBaseContext(), "Show drug!!!", Toast.LENGTH_LONG).show();
 				DisplayDrug(c);
-			} while(c.moveToNext());
+			} while (c.moveToNext());
 		}
 		db.close();
 		
@@ -148,7 +147,7 @@ public class DrugsActivity extends Activity {
 	}
 
 	private void DisplayDrug(Cursor c) {
-		//Toast.makeText(this, "Display drug!", Toast.LENGTH_LONG).show();
+		Toast.makeText(this, "Display my drug...", Toast.LENGTH_LONG).show();
 		Toast.makeText(this, "id: " + c.getString(0) + "\n" + "name: " + c.getShort(1), Toast.LENGTH_LONG).show();		
 	}
 
