@@ -31,6 +31,7 @@ public class DrugsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.drugs);
+		setTitle("Exjobb");
 		
 		DrugsDBAdapter db = new DrugsDBAdapter(this);
 		try {
